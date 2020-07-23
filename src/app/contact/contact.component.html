@@ -45,21 +45,29 @@
       <p>
         <mat-form-field class="half-width">
           <input matInput formControlName="firstname" placeholder="First Name" type="text">
-          <mat-error *ngIf="feedbackForm.get('firstname').hasError('required') && feedbackForm.get('firstname').touched">First name is required</mat-error>
+          <mat-error *ngIf="formErrors.firstname">
+            {{ formErrors.firstname }}
+          </mat-error>
         </mat-form-field>
         <mat-form-field class="half-width">
           <input matInput formControlName="lastname" placeholder="Last Name" type="text">
-          <mat-error *ngIf="feedbackForm.get('lastname').hasError('required') && feedbackForm.get('lastname').touched">last name is required</mat-error>
+          <mat-error *ngIf="formErrors.lastname">
+            {{ formErrors.lastname }}
+          </mat-error>
         </mat-form-field>
       </p>
       <p>
         <mat-form-field class="half-width">
-          <input matInput formControlName="telnum" placeholder="Tel. Number" type="tel">
-          <mat-error *ngIf="feedbackForm.get('telnum').hasError('required') && feedbackForm.get('telnum').touched">Tel. number is required</mat-error>
+          <input matInput formControlName="telnum" placeholder="Tel. Number" pattern="[0-9]*" type="tel">
+          <mat-error *ngIf="formErrors.telnum">
+            {{ formErrors.telnum }}
+          </mat-error>
         </mat-form-field>
         <mat-form-field class="half-width">
-          <input matInput formControlName="email" placeholder="Email" type="email">
-          <mat-error *ngIf="feedbackForm.get('email').hasError('required') && feedbackForm.get('email').touched">Email is required</mat-error>
+          <input matInput formControlName="email" placeholder="Email" email type="email">
+          <mat-error *ngIf="formErrors.email">
+            {{ formErrors.email }}
+          </mat-error>
         </mat-form-field>
       </p>
       <table class="form-size">
