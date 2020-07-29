@@ -53,7 +53,7 @@
       </mat-list-item>
     </mat-list>
 
-    <form novalidate [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+    <form novalidate [formGroup]="commentForm" #cform="ngForm" (ngSubmit)="onSubmit()">
       <p>
         <mat-form-field class="full-width">
           <input matInput formControlName="author" placeholder="Name" type="text">
