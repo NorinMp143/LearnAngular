@@ -115,15 +115,12 @@ export class DishdetailComponent implements OnInit {
         (dish) => {this.dish = dish;this.dishcopy = dish;},
         errmess => {this.dish = null;this.dishcopy = null; this.errMess = <any>errmess}
         );
-        console.log("entering");
     this.commentFormDirective.resetForm();
-    console.log("entered");
     this.commentForm.reset({
       author:'',
       rating:5,
       comment:''
     });
-    console.log('reached');
 
     
     
